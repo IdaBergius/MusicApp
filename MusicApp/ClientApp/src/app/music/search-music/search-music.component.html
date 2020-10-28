@@ -1,0 +1,46 @@
+<h1>DISCOVER MUSIC</h1>
+<h2>What would you like to find today?</h2>
+
+<form [formGroup]="searchMusicForm" (ngSubmit)="onSubmit(searchMusicForm.value)">
+    <div>
+        <div class="radio-inline">
+            <input id="artist" type="radio" value="artist" formControlName="type" />
+            <label class="radio-label"> Artist</label>
+            <input id="album" type="radio" value="album" formControlName="type" />
+            <label class="radio-label">Album</label>
+            <input id="track" type="radio" value="track" formControlName="type" />
+            <label class="radio-label">Track</label>
+            <input id="playlist" type="radio" value="playlist" formControlName="type" />
+            <label class="radio-label">Playlist</label>
+          </div>
+    <div>
+
+        <h4>And what would you like your newest favorite artist/album/track/playlist to sound like?</h4>
+        <label>Searchword</label>
+        <input id="searchWord" type="text" formControlName="searchWord">
+   
+    </div> 
+    </div>
+  
+<button type="submit">Search</button>
+
+</form>
+<div *ngIf="result">
+<div>
+<h3>We think you would like......</h3>
+
+<form [formGroup]="resultForm">  
+    <Label>Name</Label>
+<input type="text" value="name" formControlName="name">
+<label>Type</label>
+<input type="text" value="type" formControlName="type">
+
+</form>
+
+</div>
+
+</div>
+
+
+
+
